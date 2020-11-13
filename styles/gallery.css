@@ -24,10 +24,10 @@
     justify-content: space-between;
     flex-flow: column wrap;
 }
-.gallery figcaption{
+
+.gallery figcaption {
     margin: 0.2em 0 0 0;
     padding: 0.5em 0 0 0;
-    flex 1;
     border-top: 3px solid var(--black);
 }
 .gallery img {
