@@ -26,5 +26,10 @@ body > main{
 }
 body > header{
     grid-area: header;
-
+}
+body > footer{
+    margin: 2.5em 0 0 0;
+    color: var(--black);
+    text-align: right;
+    grid-area: footer;
 }
