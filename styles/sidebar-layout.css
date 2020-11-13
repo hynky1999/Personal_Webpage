@@ -24,7 +24,11 @@ body > aside {
 body > main{
     grid-area: content;
 }
+
 body > header{
     grid-area: header;
+}
 
+body > footer{
+    grid-area: footer;
 }
