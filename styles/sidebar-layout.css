@@ -28,7 +28,3 @@ body > header{
     grid-area: header;
 
 }
-body > footer{
-    grid-area: footer;
-    text-align: right;
-}
