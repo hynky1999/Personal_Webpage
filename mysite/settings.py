@@ -22,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SITE_ID = 1
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q^v#64eqlhr+@9ypz%6an&1vuf=*-8+spg134eb-=v5p(ww_n='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,12 +135,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-EMAIL_HOST = 'smtp.seznam.cz'
-EMAIL_HOST_USER = 'supesupe@seznam.cz'
-EMAIL_HOST_PASSWORD = 'supesuper'
-DEFAULT_FROM_EMAIL = 'hynek.kydlicek@email.cz'
-SERVER_EMAIL = 'supesupe@seznam.cz'
 
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
