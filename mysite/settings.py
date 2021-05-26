@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 SITE_ID = 1
+SECRET_KEY = 'a'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
@@ -135,6 +136,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FROM_EMAIL = 'hynek.kydlicek@email.cz'
+SERVER_EMAIL = 'supesupe@seznam.cz'
 
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
