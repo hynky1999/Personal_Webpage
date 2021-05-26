@@ -1,0 +1,53 @@
+{% extends "default/layouts/base-header-nav.html" %}
+
+{% block title %} {{article.title}} {% endblock %}
+{% block extra-head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'articles/article-full.css' %}">
+{% if header_list %}
+<link rel="stylesheet" type="text/css" href="{% static 'articles/article-2-layout.css' %}">
+{% else %}
+<link rel="stylesheet" type="text/css" href="{% static 'articles/article-1-layout.css' %}">
+{% endif %}
+{% endblock %}
+{% block return %} "{% url 'articles:index' %}" {% endblock %}
+{% block content %}
+<div class="content-area">
+    {% if header_list %}
+    <aside>
+        <div class="sidebar">
+            <h2>Overview:</h2>
+            <ol id="overview1">
+            {% for header1 in header_list %}
+                <li>
+                    <a href="{{ request.get_full_path }}#{{ header1.name }}">{{ header1.name }}</a>
+                    <ol id="overview2">
+                    {% for header2 in header1.sub_headers %}
+                        <li>
+                            <a href="{{ request.get_full_path }}#{{ header2.name }}">{{ header2.name }}</a>
+                            <ol id="overview3">
+                            {% for header3 in header2.sub_headers %}
+                                <li>
+                                    <a href="{{ request.get_full_path }}#{{ header3.name }}">{{ header3.name }}</a>
+                                </li>
+                            {% endfor %}
+                            </ol>
+                        </li>
+                    {% endfor %}
+                    </ol>
+                </li>
+            {% endfor %}
+            </ol>
+        </div>
+    </aside>
+    {% endif %}
+    <article>
+        <header>
+            <h1>{{ article.title }}</h1>
+        </header>
+        {% autoescape off %}
+        {{ article.content }}
+        {% endautoescape %}
+    </article>
+</div>
+{% endblock %}

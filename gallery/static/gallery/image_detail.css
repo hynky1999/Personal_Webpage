@@ -1,0 +1,57 @@
+main *{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--black);
+    margin: 0;
+}
+
+.image_detail {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-items: center;
+    grid-template-clumns: 1fr 2fr;
+    width: 60%;
+    margin: auto;
+}
+
+
+figure > img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+figure figcaption{
+    margin: 0.4em 0 0 0;
+    padding: 1em;
+    border: 3px solid var(--blue1);
+    font-size: 1.3em;
+}
+
+figure {
+    flex: 3;
+    padding: 0.5em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    margin: auto;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    margin-left: 0.5em;
+    text-align: center;
+    flex: 2;
+    border: 2px solid var(--blue2);
+}
+
+.description > h2 {
+    padding: 0.5em;
+}
+
+.description > p {
+    flex: 5;
+    display: block;
+    height: auto;
+}

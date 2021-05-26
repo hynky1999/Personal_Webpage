@@ -1,0 +1,78 @@
+.content-area {
+    display: grid;
+    grid-template-areas:
+    "article-sidebar article-content";
+    grid-template-columns: 18em 1fr;
+    grid-gap: 2em;
+    margin: 5em 2.5em 2.5em 2.5em;
+}
+
+.content-area > aside {
+    grid-area: article-sidebar;
+}
+
+.content-area > article{
+    grid-area: article-content;
+}
+
+article *{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    color: var(--black);
+}
+
+article header h1{
+    font-size: 3em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+article footer{
+    font-size: 1.2em;
+    text-align: right;
+}
+
+article footer:before{
+    content:"Author: ";
+}
+
+article p {
+    line-height: 1.5;
+    word-spacing: 0.1em;
+    padding: 0.5em;
+    text-indent: 1em;
+}
+
+article section > h2{
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+/* sidebar */
+
+.sidebar #overview1{
+    margin: 1em 0 0 0;
+}
+.sidebar li{
+    padding: 0.15em;
+    font-size: 0.8em;
+}
+.sidebar #overview1 > li{
+    font-size: 1.2em;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar *{
+    color: var(--black);
+    margin: 0;
+}
+
+.sidebar{
+    font-family: 'Source Sans Pro', sans-serif;
+    position: sticky;
+    top: 2em;
+    border-right: 3px solid var(--blue1);
+}

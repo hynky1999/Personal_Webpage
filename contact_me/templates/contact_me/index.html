@@ -1,0 +1,21 @@
+{% extends "default/layouts/base-side-nav.html" %}
+{% load static %}
+{% block extra-head %}
+<link rel="stylesheet" type="text/css" href="{% static 'contact_me/form.css' %}">
+{% endblock %}
+{% block title %} Contact Me {% endblock %}
+
+{% block content %}
+<div class="form-content">
+<header>
+    <h2>Contact Form</h2>
+    <h3>{{ forms.non_field_errors }}</h3>
+</header>
+<form action="{% url 'contact_me:index' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}

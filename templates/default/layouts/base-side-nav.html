@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta name="author" content="Hynek Kydlicek">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{% static 'default/layouts/base-side-nav.css' %}">
+        <link rel="stylesheet" href="{% static 'default/elements/button.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        {% block extra-head %}{% endblock %}
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <aside>
+            <div class="sidebar">
+                <div class="sidebar-me">
+                    {% load static %}
+                    <img src="{% static 'default/images/my-photo.jpg' %}" alt="Hynek Kydlicek picture">
+                    <h3>Hynek Kydlíček</h3>
+                    <p>Computer science student at MFF UK.<br>
+                    I am interested in AI/ML, cryptocurrency and Unix.
+                    </p>
+                </div>
+                <div class="sidebar-links">
+                    <a href= "https://github.com/hynky1999">Github</a>
+                    <a href= "mailto:kydlicek.hynek@gmail.com?subject=feedbackmail" target="HK email">@</a>
+                </div>
+                <div class="sidebar-locations">
+                    <h3><a class="button" href="{% url 'articles:index' %}">Articles</a></h3>
+                    <h3><a class="button" href="{% url 'gallery:index' %}">Gallery</a></h3>
+                    <h3><a class="button" href="{% url 'contact_me:index' %}">Contact me</a></h3>
+                </div>
+            </div>
+        </aside>
+        <main>
+            {% block content %} {% endblock %}
+        </main>
+        <footer>
+            Made by Hynek Kydlíček
+        </footer>
+    </body>
+</html>

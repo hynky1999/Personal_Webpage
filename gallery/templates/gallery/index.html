@@ -1,0 +1,23 @@
+{% extends "default/layouts/base-header-nav.html" %}
+
+{% block title %} Gallery {% endblock %}
+
+{% block extra-head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'gallery/gallery.css' %}">
+{% endblock %}
+
+{% block return %} "{% url 'articles:index' %}" {% endblock %}
+
+{% block content %}
+<main class="gallery">
+    {% for image in image_list %}
+    <a href="{% url 'gallery:detail' image.uuid %}" >
+    <figure>
+        <img src="{{ image.image_field.url }}" alt="{{ image.title }}({{ image.heigh_field }}x{{ image.width_field }}">
+        <figcaption>{{image.title}}</figcaption>
+    </figure>
+    </a>
+    {% endfor %}
+</main>
+{% endblock %}

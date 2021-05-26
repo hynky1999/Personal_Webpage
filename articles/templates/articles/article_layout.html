@@ -1,0 +1,17 @@
+.content-area {
+    display: grid;
+    grid-template-areas:
+    "sidebar-article content-article";
+    grid-template-columns: 18em 1fr;
+    grid-gap: 2em;
+    margin: 5em 2.5em 2.5em 2.5em;
+}
+
+.content-area > aside {
+    grid-area: sidebar-article;
+}
+
+.content-area > article {
+    grid-area: content-article;
+}
+

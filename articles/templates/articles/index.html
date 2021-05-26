@@ -1,0 +1,29 @@
+{% extends "default/layouts/base-side-nav.html" %}
+
+{% block title %} Articles {% endblock %}
+
+{% block extra-head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'articles/article-list.css' %}">
+{% endblock %}
+
+{% block content %}
+<header class="article-list-header">
+    <h2>Total articles: {{ articles|length }} </h2>
+</header>
+{% for article in article_list %}
+    <a class="article-prev" href="{% url 'articles:detail' article.title|slugify %}">
+        <article>
+            <header>
+                <div class="article-info">
+                    <h3>{{ article.creation_date }}</h3>
+                </div>
+                <h1>{{ article.title }}</h1>
+            </header>
+            <p>
+                {{ article.content|striptags|truncatechars_html:1000 }}
+            </p>
+        </article>
+    </a>
+{% endfor %}
+{% endblock %}

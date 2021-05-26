@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta name="author" content="Hynek Kydlicek">
+        <meta name="viewport" content="width=device-width">
+        {% block extra-head %} {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'default/elements/button.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'default/layouts/base-header-nav.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+        <title>{% block title %} {% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <div id="header-flex">
+                <h2 id="header-return"><a class="button" href={% block return %} {% endblock %}>Return</a></h2>
+                <h2 id="header-date">{{ creation_date }}</h2>
+            </div>
+            <hr>
+        </header>
+        <main>
+        {% block content %} {% endblock %}
+        </main>
+        <footer>
+            Made by Hynek Kydlíček
+        </footer>
+    </body>
+</html>

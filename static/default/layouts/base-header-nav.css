@@ -1,0 +1,58 @@
+@import url("colors.css");
+
+/* layout 1-1-1 */
+body {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content"
+    "footer";
+    grid-template-columns: 1fr;
+    margin: 5em 2.5em 2.5em 2.5em;
+}
+
+body > main{
+    grid-area: content;
+}
+
+body > header{
+    grid-area: header;
+}
+
+body > footer{
+    grid-area: footer;
+}
+
+/* header */
+body > header *{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    color: var(--black);
+}
+body > header{
+    margin: 0 0 2.5em 0;
+}
+body > header a{
+    padding: 0.1em;
+    text-decoration: none;
+}
+
+body > header #header-flex{
+    display: flex;
+    justify-content: space-between;
+}
+body > header #header-flex #header-return{
+    flex: 1;
+}
+body > header #header-date{
+    flex: 1;
+    text-align: right;
+}
+
+/* footer */
+body > footer{
+    text-align: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 2.5em 0 0 0;
+    color: var(--black);
+}
