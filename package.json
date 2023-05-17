@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.0",
+    "@tanstack/react-query": "^4.29.7",
+    "@uiw/react-md-editor": "^3.6.0",
+    "bulma": "^0.9.4",
+    "gray-matter": "^4.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "next": "^13.4.2",
+    "next-auth": "^4.22.1",
+    "next-remove-imports": "^1.0.11",
+    "node-sass": "^7.0.3",
+    "react": "^18.2.0",
+    "react-bulma-components": "^4.1.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.7",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "eslint-config-next": "^13.4.2",
+    "prisma": "^4.14.0",
+    "typescript": "^4.8.3"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  }
+}
