@@ -10,7 +10,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'Default route' }: Props) => {
+const Layout = ({ children, title = 'hynky - personal web' }: Props) => {
   const [activeMenu, setActiveMenu] = useState(false);
 
   return (
