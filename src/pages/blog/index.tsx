@@ -7,9 +7,9 @@ import prisma from '../../lib/prisma';
 import { BlogPost } from '.prisma/client';
 import { useRouter } from 'next/router';
 import styles from './blog.module.css'
-import { InferGetServerSidePropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const blogPosts = await prisma.blogPost.findMany({
     take: 10,
   });
@@ -21,10 +21,12 @@ export async function getServerSideProps() {
       }
     }) : null;
 
-  return { props: { serializedPosts } }
+  return { props: { serializedPosts },
+      revalidate: 6000,
+}
 }
 
-export default function BlogPage({ serializedPosts }:  InferGetServerSidePropsType<typeof getServerSideProps> ) {
+export default function BlogPage({ serializedPosts }:  InferGetStaticPropsType<typeof getServerSideProps> ) {
   const { data: session } = useSession();
   const canAdd = session?.user?.claims?.includes('blogAdd') ?? false;
   const blogPosts = serializedPosts?.map((post) => {

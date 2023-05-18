@@ -57,6 +57,28 @@ export default function About() {
           <Heading textAlign='center' size={3}>Projects</Heading>
           <Slideshow/>
         </Box>
+        <Box>
+          <Heading textAlign='center' size={3}>Education</Heading>
+          <Columns mx={'auto'}>
+            <Columns.Column textAlign='center'>
+                <Heading size={4}>Charles University</Heading>
+                <Heading subtitle size={5}>Bachelor's degree, Computer Science</Heading>
+                <Content>
+                  <p>2020-2023</p>
+                  <p>Prague, Czech Republic</p>
+                  <p><a href="/thesis/thesis.pdf">Thesis</a>: Implicit information extraction from news stories</p>
+                </Content>
+            </Columns.Column>
+            <Columns.Column textAlign='center'>
+                <Heading size={4}>Prg.ai</Heading>
+                <Heading subtitle size={5}>Minor</Heading>
+                <Content>
+                  <p>2022-2023</p>
+                  <p>Prague, Czech Republic</p>
+                </Content>
+            </Columns.Column>
+            </Columns>
+          </Box>
       </Container>
     </Layout>
   );
