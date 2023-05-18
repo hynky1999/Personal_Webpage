@@ -4,7 +4,6 @@ import BlogPostQuick from '../../components/BlogPostQuick';
 import Layout from '../../components/Layout';
 import { useSession } from 'next-auth/react';
 import prisma from '../../lib/prisma';
-import { BlogPost } from '.prisma/client';
 import { useRouter } from 'next/router';
 import styles from './blog.module.css'
 import { InferGetStaticPropsType } from 'next';
@@ -26,7 +25,7 @@ export async function getStaticProps() {
 }
 }
 
-export default function BlogPage({ serializedPosts }:  InferGetStaticPropsType<typeof getServerSideProps> ) {
+export default function BlogPage({ serializedPosts }:  InferGetStaticPropsType<typeof getStaticProps> ) {
   const { data: session } = useSession();
   const canAdd = session?.user?.claims?.includes('blogAdd') ?? false;
   const blogPosts = serializedPosts?.map((post) => {
