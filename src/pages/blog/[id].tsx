@@ -4,11 +4,11 @@ import { Prisma, BlogPost } from '@prisma/client';
 import Layout from '../../components/Layout';
 import { Content, Hero, Section, Heading, Block } from 'react-bulma-components';
 import { useRouter } from 'next/router';
-import { InferGetServerSidePropsType } from 'next';
+import { InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
     const { id } = params;
     const post = await prisma.blogPost.findUnique({
         where: {
@@ -27,7 +27,7 @@ export async function getServerSideProps({ params }) {
 }
 
 
-export default function Blog({ post }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Blog({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     if (!post) {
         return (
             <Layout>
